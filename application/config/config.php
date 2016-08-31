@@ -23,8 +23,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'dev.remotly.in';
+if(ENVIRONMENT == 'dev')
+$config['base_url'] = 'http://dev.remotly.in';
 
+if(ENVIRONMENT == 'prod')
+$config['base_url'] = 'http://www.remotly.in';
 /*
 |--------------------------------------------------------------------------
 | Index File

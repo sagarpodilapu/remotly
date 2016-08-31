@@ -43,11 +43,11 @@
     	<figure class="logo animated fadeInDown delay-07s">
         	<a href="#"><img src="img/logo.png" alt=""></a>
         </figure>
-        <h1 class="animated fadeInDown delay-07s">Welcome To Knight Studios</h1>
+        <h1 class="animated fadeInDown delay-07s">Welcome To Remotly</h1>
         <ul class="we-create animated fadeInUp delay-1s">
-        	<li>We are a digital agency that loves crafting beautiful websites.</li>
+        	<li>Work remotely and get Paid.</li>
         </ul>
-            <a class="link animated fadeInUp delay-1s" href="#">Get Started</a>
+            <a class="link animated fadeInUp delay-1s" href="<?php echo base_url();?>home/how_it_works">How it works</a>
     </div>
 </div>
 </header><!--header-end-->
@@ -57,7 +57,7 @@
 	<div class="container">
         <ul class="main-nav">
         	<li><a href="#header">Home</a></li>
-            <li><a href="#service">Services</a></li>
+            <li><a href="#service">How it works</a></li>
             <li><a href="#Portfolio">Portfolio</a></li>
             <li class="small-logo"><a href="#header"><img src="img/small-logo.png" alt=""></a></li>
             <li><a href="#client">Clients</a></li>
@@ -222,7 +222,7 @@
 		<b class="quote-right wow fadeInDown delay-03"><i class="fa-quote-right"></i></b>
     	<div class="row">
         	<div class="col-lg-12">
-            	<p class="client-part-haead wow fadeInDown delay-05">It was a pleasure to work with the guys at Knight Studio. They made sure
+            	<p class="client-part-haead wow fadeInDown delay-05">It was a pleasure to work with the guys at Remotly. They made sure
 we were well fed and drunk all the time!</p>
             </div>
         </div>
@@ -322,7 +322,7 @@ we were well fed and drunk all the time!</p>
                 </div>
                 <div class="contact-info-box email clearfix">
                 	<h3><i class="fa-pencil"></i>email:</h3>
-                	<span>hello@knightstudios.com</span>
+                	<span>iwork@remotly.in</span>
                 </div>
             	<div class="contact-info-box hours clearfix">
                 	<h3><i class="fa-clock-o"></i>Hours:</h3>

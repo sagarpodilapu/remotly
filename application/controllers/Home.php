@@ -22,4 +22,8 @@ class Home extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
+
+  public function how_it_works(){
+    $this->load->view('how_it_works');
+  }
 }

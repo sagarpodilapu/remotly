@@ -34,7 +34,7 @@
     <script src="<?php echo base_url();?>js/html5element.js"></script>
 <![endif]-->
 
-
+<meta name="google-site-verification" content="d1M9UtTkGrJVG6kcjR7SwmddgmWz4ZEBtY_rP7jufK8" />
 </head>
 <body>
 <div style="overflow:hidden;">
@@ -174,45 +174,45 @@
       <div class="portfolioFilter">
         <ul class="Portfolio-nav wow fadeIn delay-02s">
         	<li><a href="#" data-filter="*" class="current">All</a></li>
-            <li><a href="#" data-filter=".branding">Design</a></li>
+            <li><a href="#" data-filter=".branding">UI/UX Design</a></li>
             <li><a href="#" data-filter=".webdesign">Web design</a></li>
             <li><a href="#" data-filter=".printdesign">Web Development</a></li>
-            <li><a href="#" data-filter=".photography">Marketing</a></li>
         </ul>
        </div>
 
 	</div>
     <div class="portfolioContainer wow fadeInUp delay-04s">
+							<div class=" Portfolio-box printdesign">
+								<a href="#"><img src="<?php echo base_url()?>img/wordpress.png" alt=""></a>
+								<h3>Wordpress</h3>
+									<p>Web Development</p>
+							</div>
             	<div class=" Portfolio-box branding">
-                	<a href="#"><img src="img/Portfolio-pic1.jpg" alt=""></a>
+                	<a href="#"><img src="<?php echo base_url()?>img/photoshop.png" alt=""></a>
                 	<h3>Photoshop</h3>
                     <p>Design</p>
                 </div>
-                <div class=" Portfolio-box webdesign">
-                	<a href="#"><img src="img/Portfolio-pic3.jpg" alt=""></a>
-                	<h3>Bootstrap</h3>
-                    <p>Web Design</p>
-                </div>
-								<div class=" Portfolio-box photography" >
-                	<a href="#"><img src="img/Portfolio-pic4.jpg" alt=""></a>
-                	<h3>Content Writing</h3>
-                    <p>Marketing</p>
-                </div>
-                <div class=" Portfolio-box printdesign">
-                	<a href="#"><img src="img/Portfolio-pic5.jpg" alt=""></a>
+								<div class=" Portfolio-box printdesign">
+                	<a href="#"><img src="<?php echo base_url()?>img/php.png" alt=""></a>
                 	<h3>PHP</h3>
                     <p>Web Development</p>
                 </div>
+								<div class=" Portfolio-box webdesign">
+                	<a href="#"><img src="<?php echo base_url()?>img/bootstrap.png" alt=""></a>
+                	<h3>Bootstrap</h3>
+                    <p>Web Design</p>
+                </div>
                 <div class=" Portfolio-box printdesign">
-                	<a href="#"><img src="img/Portfolio-pic6.jpg" alt=""></a>
-                	<h3>MySql</h3>
+                	<a href="#"><img src="<?php echo base_url()?>img/codeigniter.png" alt=""></a>
+                	<h3>CodeIgniter</h3>
                     <p>Web Development</p>
                 </div>
-								<div class=" Portfolio-box photography" >
-                	<a href="#"><img src="img/Portfolio-pic4.jpg" alt=""></a>
-                	<h3>Facebook Marketing</h3>
-                    <p>Marketing</p>
+                <div class=" Portfolio-box webdesign">
+                	<a href="#"><img src="<?php echo base_url()?>img/javascript.png" alt=""></a>
+                	<h3>Javascript</h3>
+                    <p>Web Design</p>
                 </div>
+
     </div>
 </section><!--main-section-end-->
 
@@ -253,7 +253,7 @@
             <div class="team-leader-box">
                 <div class="team-leader wow fadeInDown delay-03s">
                     <div class="team-leader-shadow"><a href="#"></a></div>
-                    <img src="img/team-leader-pic1.jpg" alt="">
+                    <img src="<?php echo base_url()?>img/sagar.png" alt="">
                     <ul>
                         <li><a href="#" class="fa-twitter"></a></li>
                         <li><a href="#" class="fa-facebook"></a></li>
@@ -268,7 +268,7 @@
             <div class="team-leader-box">
                 <div class="team-leader  wow fadeInDown delay-06s">
                     <div class="team-leader-shadow"><a href="#"></a></div>
-                    <img src="img/team-leader-pic2.jpg" alt="">
+                    <img src="<?php echo base_url()?>img/g.png" alt="">
                     <ul>
                         <li><a href="#" class="fa-twitter"></a></li>
                         <li><a href="#" class="fa-facebook"></a></li>
@@ -283,7 +283,7 @@
             <div class="team-leader-box">
                 <div class="team-leader wow fadeInDown delay-09s">
                     <div class="team-leader-shadow"><a href="#"></a></div>
-                    <img src="img/team-leader-pic1.jpg" alt="">
+                    <img src="<?php echo base_url()?>img/saurabh.png" alt="">
                     <ul>
                         <li><a href="#" class="fa-twitter"></a></li>
                         <li><a href="#" class="fa-facebook"></a></li>

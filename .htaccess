@@ -4,7 +4,7 @@ Options +FollowSymlinks -MultiViews
 RewriteEngine On
 RewriteBase /
 RewriteCond %{HTTP_HOST} !^www\. [NC]
-RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
 DirectoryIndex index.php
 RewriteCond %{REQUEST_URI} ^system.*
 RewriteRule (.*) index.php?/$1 [L]

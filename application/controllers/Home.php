@@ -43,15 +43,21 @@ class Home extends CI_Controller {
 	}
 
 	public function complete(){
-		$token = $this->apiRequest($tokenURL, array(
-	    'client_id' => GIT_OAUTH2_CLIENT_ID,
-	    'client_secret' => GIT_OAUTH2_CLIENT_SECRET,
-	    'redirect_uri' => base_url().'complete',
-	    'state' => $this->session->userdata('state'),
-	    'code' => $this->input->get('code')
-	  ));
-		echo '<pre>',print_r($token); exit;
-		$this->session->set_userdata('access_token',$token->access_token);
+		if($this->input->get('code')) {
+  		if(!$this->input->get('state') || $this->session->userdata('state') != $this->input->get('state')) {
+    		echo 'state does not exist or mismatched';
+    		exit;
+			}
+			$token = $this->apiRequest($tokenURL, array(
+		    'client_id' => GIT_OAUTH2_CLIENT_ID,
+		    'client_secret' => GIT_OAUTH2_CLIENT_SECRET,
+		    'redirect_uri' => base_url().'complete',
+		    'state' => $this->session->userdata('state'),
+		    'code' => $this->input->get('code')
+		  ));
+			echo '<pre>',print_r($token); exit;
+			$this->session->set_userdata('access_token',$token->access_token);
+		}
 		if($this->session->userdata('access_token')) {
 		  $user = $this->apiRequest($apiURLBase . 'user');
 		  echo '<h3>Logged In</h3>';

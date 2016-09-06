@@ -83,3 +83,6 @@ defined('EXIT_USER_INPUT')     OR define('EXIT_USER_INPUT', 7); // invalid user 
 defined('EXIT_DATABASE')       OR define('EXIT_DATABASE', 8); // database error
 defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automatically-assigned error code
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
+
+defined('GIT_OAUTH2_CLIENT_ID')    OR define('GIT_OAUTH2_CLIENT_ID', 'cc96990e0a30c2947bf5');
+defined('GIT_OAUTH2_CLIENT_SECRET')    OR define('GIT_OAUTH2_CLIENT_SECRET', 'bf363cd7699bd5f8a9d70eb0b3a0c3ee84764026');

@@ -26,4 +26,54 @@ class Home extends CI_Controller {
   public function how_it_works(){
     $this->load->view('how_it_works');
   }
+
+	public function get_started(){
+		$this->session->set_userdata('state',hash('sha256', microtime(TRUE).rand().$_SERVER['REMOTE_ADDR']));
+		unset($_SESSION['access_token']);
+		$params = array(
+	    'client_id' => GIT_OAUTH2_CLIENT_ID,
+	    'redirect_uri' => base_url().'complete',
+	    'scope' => 'user',
+	    'state' => $this->session->userdata('state')
+	  );
+		$authorizeURL = 'https://github.com/login/oauth/authorize';
+		$tokenURL = 'https://github.com/login/oauth/access_token';
+		$apiURLBase = 'https://api.github.com/';
+		redirect($authorizeURL . '?' . http_build_query($params),'refresh');
+	}
+
+	public function complete(){
+		$token = $this->apiRequest($tokenURL, array(
+	    'client_id' => GIT_OAUTH2_CLIENT_ID,
+	    'client_secret' => GIT_OAUTH2_CLIENT_SECRET,
+	    'redirect_uri' => base_url().'complete',
+	    'state' => $this->session->userdata('state'),
+	    'code' => $this->input->get('code')
+	  ));
+		$this->session->set_userdata('access_token',$token->access_token);
+		if($this->session->userdata('access_token')) {
+		  $user = $this->apiRequest($apiURLBase . 'user');
+		  echo '<h3>Logged In</h3>';
+		  echo '<h4>' . $user->name . '</h4>';
+		  echo '<pre>';
+		  print_r($user);
+		  echo '</pre>';
+		} else {
+		  redirect('get_started','refresh');
+		}
+
+	}
+
+	private function apiRequest($url, $post=FALSE, $headers=array()) {
+	  $ch = curl_init($url);
+	  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	  if($post)
+	    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post));
+	  $headers[] = 'Accept: application/json';
+	  if($this->session->userdata('access_token'))
+	    $headers[] = 'Authorization: Bearer ' . $this->session->userdata('access_token');
+	  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	  $response = curl_exec($ch);
+	  return json_decode($response);
+	}
 }

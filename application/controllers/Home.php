@@ -59,7 +59,7 @@ class Home extends CI_Controller {
 		  print_r($user);
 		  echo '</pre>';
 		} else {
-		  redirect('get_started','refresh');
+		  echo 'login';
 		}
 
 	}

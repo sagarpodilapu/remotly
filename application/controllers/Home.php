@@ -50,6 +50,7 @@ class Home extends CI_Controller {
 	    'state' => $this->session->userdata('state'),
 	    'code' => $this->input->get('code')
 	  ));
+		echo '<pre>',print_r($token); exit;
 		$this->session->set_userdata('access_token',$token->access_token);
 		if($this->session->userdata('access_token')) {
 		  $user = $this->apiRequest($apiURLBase . 'user');

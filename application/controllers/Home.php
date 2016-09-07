@@ -37,12 +37,12 @@ class Home extends CI_Controller {
 	    'state' => $this->session->userdata('state')
 	  );
 		$authorizeURL = 'https://github.com/login/oauth/authorize';
-		$tokenURL = 'https://github.com/login/oauth/access_token';
-		$apiURLBase = 'https://api.github.com/';
 		redirect($authorizeURL . '?' . http_build_query($params),'refresh');
 	}
 
 	public function complete(){
+		$tokenURL = 'https://github.com/login/oauth/access_token';
+		$apiURLBase = 'https://api.github.com/';
 		if($this->input->get('code')) {
   		if(!$this->input->get('state') || $this->session->userdata('state') != $this->input->get('state')) {
     		echo 'state does not exist or mismatched';
@@ -56,7 +56,7 @@ class Home extends CI_Controller {
 		    'code' => $this->input->get('code')
 		  );
 			$token = $this->apiRequest($tokenURL, $params);
-			echo '<pre>',var_dump($params); exit;
+			//echo '<pre>',var_dump($params); exit;
 			$this->session->set_userdata('access_token',$token->access_token);
 		}
 		if($this->session->userdata('access_token')) {

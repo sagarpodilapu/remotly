@@ -48,14 +48,15 @@ class Home extends CI_Controller {
     		echo 'state does not exist or mismatched';
     		exit;
 			}
-			$token = $this->apiRequest($tokenURL, array(
+			$params = array(
 		    'client_id' => GIT_OAUTH2_CLIENT_ID,
 		    'client_secret' => GIT_OAUTH2_CLIENT_SECRET,
 		    'redirect_uri' => base_url().'complete',
 		    'state' => $this->session->userdata('state'),
 		    'code' => $this->input->get('code')
-		  ));
-			echo '<pre>',var_dump($token); exit;
+		  );
+			$token = $this->apiRequest($tokenURL, $params);
+			echo '<pre>',var_dump($params); exit;
 			$this->session->set_userdata('access_token',$token->access_token);
 		}
 		if($this->session->userdata('access_token')) {
